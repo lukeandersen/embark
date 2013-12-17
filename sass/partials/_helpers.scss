@@ -1,0 +1,44 @@
+/* HELPERS */
+.visually-hidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visually-hidden.focusable:active, .visually-hidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.text-offscreen {text-indent: 100%; white-space: nowrap; overflow: hidden; }
+.hidden { display: none !important; visibility: hidden; }
+.clear { clear:both; display:block; margin:0; padding:0; height:0; line-height:1px; font-size:1px }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+.left {float: left;}
+.right {float: right;}
+.clear-left {clear: left;}
+.clear-right {clear: right;}
+.align-right { text-align: right;}
+.img-left {float: left;margin: 0 15px 15px 0;}
+.img-right {float: right;margin: 0 0 15px 15px;}
+.last { margin-right:0 !important;}
+.flat-list { margin:0; padding:0;
+	li { float:left; list-style: none;}
+}
+.border-box {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+.no-marg {margin: 0;}
+.no-marg-btm {margin-bottom: 0;}
+
+/* Grid % */
+.one-half, .one-third, .two-third, .one-fourth, .three-fourth, .full-width {float: left; margin-right: 3%;}
+.one-half.last, .one-third.last, .two-third.last, .one-fourth.last, .three-fourth.last {margin-right: 0;}
+.one-half {width: 48.5%;}
+.one-third {width: 31%;}
+.two-third {width: 65%;}
+.one-fourth {width: 22.5%;}
+.three-fourth {width: 73.5%;}
+
+/* Core WP Styles */
+a img.aligncenter{display:block;margin-left:auto;margin-right:auto;}
+.wp-caption{background:#fff;border:1px solid #f0f0f0;max-width:96%;text-align:center;padding:5px 3px 10px;}
+.wp-caption.alignright{margin:5px 0 20px 20px;}
+.wp-caption img{border:0 none;height:auto;max-width:98.5%;width:auto;margin:0;padding:0;}
+.wp-caption p.wp-caption-text{font-size:11px;line-height:17px;margin:0;padding:0 4px 5px;}
+.alignnone,a img.alignnone,.wp-caption.alignnone,.wp-caption.alignleft{margin:5px 20px 20px 0;}
+.aligncenter,div.aligncenter,.aligncenter{display:block;margin:5px auto;}
+.alignright,a img.alignright{float:right;margin:5px 0 20px 20px;}
+.alignleft,a img.alignleft{float:left;margin:5px 20px 20px 0;}
+

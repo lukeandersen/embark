@@ -1,0 +1,23 @@
+Embark is a starter theme for WordPress
+
+Author:
+  Luke Andersen
+  http://lawebdesign.com.au
+  luke@lawebdesign.com.au
+
+Technology:
+  WordPress 3.5
+  Sass 3.1.20 and Compass 0.12.2
+  Normalize.css 2
+  HTML 5 Boilerplate 4.0.2
+  Modernizr 2.6.1
+  jQuery 1.8.3
+
+Tools:
+  _s (underscores theme)
+  Sublime Text 2
+
+Thanks:
+  Wordpress Codex
+  Jeffrey Way
+  Chris Coyier

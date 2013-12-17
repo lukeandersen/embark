@@ -1,0 +1,135 @@
+/*
+Theme Name: Embark
+Theme URI: http://github.com/lawebdesign/embark
+Author: Luke Andersen
+Author URI: http://lawebdesign.com.au/
+Description: Embark is a responsive development framework for Wordpress
+Version: 0.1
+License: GNU General Public License
+License URI: license.txt
+
+*/
+@charset "utf-8";
+
+// Compass includes
+@import "compass";
+@import "compass/css3"; 
+
+// Import partials at the top of the CSS 
+@import "partials/reset.scss";
+@import "partials/mixins.scss";
+@import "partials/placeholders.scss";
+
+// Compass sprites
+$icon-spacing: 50px; 
+@import "icon/*.png";
+@include all-icon-sprites;
+// Usage just call @include icon-sprite(image-name, true, 10px, 10px); // (image-name, auto dimentions, offsetX, offsetY)
+
+// Add your site vairables here
+
+//Site
+$base-site-width: 960px;
+
+//Type
+$base-font-family: $helvetica;
+$base-font-size: 12px;
+$base-line-height: 1.4;
+$font-color: #222;
+
+//Links
+$link-color: #00e;
+$link-visited-color: #551a8b;
+$link-hover-color: #06e;
+
+// text colours
+$loud: #000;
+$main: #333;
+
+
+/* Structure */
+html, body{ font-size: 62.5%; -webkit-font-smoothing: antialiased; }
+body {color:$font-color; font-family: $base-font-family; line-height:$base-line-height; @include font-size(1.2);}
+
+.site{ width:$base-site-width; margin:0 auto;}
+.site-header {
+	@extend %clearfix;
+}
+
+.site-navigation {
+    @extend %clearfix;
+    ul {
+        margin: 0; 
+        padding: 0;
+    }
+    li {
+        padding: 0; 
+        float: left; 
+        position: relative; 
+        list-style:none;
+        // Dropdown
+        > ul {
+            display: none; 
+            border-bottom: 1px solid #CCC;
+        }
+        &:hover > ul, &.hover > ul {
+            display: block; 
+            position: absolute; 
+            top:100%; 
+            left:0; 
+            width:200px; 
+            background:#dbdbdb;
+        }
+        li {
+            width:100%;
+            // Dropdown Second level
+            &:hover, &.hover {
+                > ul {
+                    top:0; 
+                    left:100%;
+                }
+                > a {
+                    border-bottom: 1px solid transparent; 
+                    background-color: #d1d1d1;   
+                }
+            }
+        }
+        // Active and hover
+        &:hover > a, &.hover > a, &.active a {
+            background:#dbdbdb; 
+            border-bottom: 1px solid transparent;
+        }
+    }
+    a {
+        text-decoration:none; 
+        color: #545454; 
+        padding: 6px 14px; 
+        display: block; 
+        border-bottom: 1px solid transparent; 
+        @include transition(all 0.3s);
+    }
+} 
+
+.site-main {
+	@extend %clearfix;
+}
+.site-footer {
+	@extend %clearfix;
+}
+
+/* Type */
+@import "partials/type.scss";
+
+/* Forms */
+// Input placeholder styling
+::-webkit-input-placeholder {color:#999999!important;}
+:-moz-placeholder {color:#999999!important;}
+:-ms-placeholder {color:#999999!important;}
+:placeholder {color:#999999!important;}
+.placeholder {color:#999999!important;}
+
+// Import partials after the main CSS 
+@import "partials/helpers.scss";
+@import "partials/media_queries.scss";
+@import "partials/print.scss";
+
