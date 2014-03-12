@@ -1,7 +1,6 @@
-#Embark
-Embark is a WordPress starter theme based off Underscores, HTML5 boilerplate and set-up with Compass/Sass and ready for responsive webdesign.
+# Embark is a WordPress starter theme based off Underscores, HTML5 boilerplate and set-up with Compass/Sass and ready for responsive webdesign
 
-### Components
+## Components
 
 * [Normalize.css](http://necolas.github.com/normalize.css/)
 * [HTML5 Boilerplate](http://html5boilerplate.com)
@@ -10,7 +9,7 @@ Embark is a WordPress starter theme based off Underscores, HTML5 boilerplate and
 * [Modernizr](http://modernizr.com/)
 
 
-#### Requirements
+### Requirements
 
 1. WordPress 3.4 installation or higher
 2. Method to compile Compass/Sass CodeKit, etc.

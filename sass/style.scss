@@ -7,78 +7,96 @@ Description: Embark is a responsive development framework for Wordpress
 Version: 0.1
 License: GNU General Public License
 License URI: license.txt
-
 */
-@charset "utf-8";
 
-// Compass includes
+@charset "utf-8";
 @import "compass";
 @import "compass/css3"; 
-
-// Import partials at the top of the CSS 
-@import "partials/reset.scss";
+@import "partials/normalize.scss";
 @import "partials/mixins.scss";
+
+// Site vairables
+
+// Breakpoints
+$small: 33.75em; //540px
+$medium: 48em; //768px
+$large: 62em; //992px
+$x-large: 78em; //1248px
+
+// Colours
+$main: #2E3639;
+$lt-gray: #f3f3f3;
+$blue: #2AC4EA;
+
+// Links
+$link: #777;
+$link-hover: darken($link, 15%);
+
+@import "partials/type.scss";
 @import "partials/placeholders.scss";
 
-// Compass sprites
-$icon-spacing: 50px; 
-@import "icon/*.png";
-@include all-icon-sprites;
-// Usage just call @include icon-sprite(image-name, true, 10px, 10px); // (image-name, auto dimentions, offsetX, offsetY)
 
-// Add your site vairables here
+// Structure
+*, 
+*:before, 
+*:after {
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box; 
+}
+html, body{ font-size: 100%; -webkit-font-smoothing: antialiased; }
+body { 
+    color:$main; 
+    font-family: $helvetica; 
+    line-height:1.45;
+}
+.site{ 
+    max-width:$x-large; 
+    margin:0 auto;
+}
 
-//Site
-$base-site-width: 960px;
-
-//Type
-$base-font-family: $helvetica;
-$base-font-size: 12px;
-$base-line-height: 1.4;
-$font-color: #222;
-
-//Links
-$link-color: #00e;
-$link-visited-color: #551a8b;
-$link-hover-color: #06e;
-
-// text colours
-$loud: #000;
-$main: #333;
-
-
-/* Structure */
-html, body{ font-size: 62.5%; -webkit-font-smoothing: antialiased; }
-body {color:$font-color; font-family: $base-font-family; line-height:$base-line-height; @include font-size(1.2);}
-
-.site{ width:$base-site-width; margin:0 auto;}
+// Header
 .site-header {
 	@extend %clearfix;
 }
 
+// Navigation
 .site-navigation {
     @extend %clearfix;
+    @include breakpoint(medium) {
+        float: right;
+    }
     ul {
         margin: 0; 
         padding: 0;
+        display: none;
+        @include breakpoint(medium) {
+            display: block;
+        }
     }
     li {
         padding: 0; 
         float: left; 
         position: relative; 
         list-style:none;
+        width: 100%;
+        @include breakpoint(medium) {
+            width: auto;
+        }
         // Dropdown
         > ul {
             display: none; 
-            border-bottom: 1px solid #CCC;
+            z-index: 100;
         }
-        &:hover > ul, &.hover > ul {
-            display: block; 
-            position: absolute; 
-            top:100%; 
-            left:0; 
-            width:200px; 
+        &:hover > ul, &.hover > ul { 
             background:#dbdbdb;
+            @include breakpoint(medium) {
+                display: block; 
+                position: absolute; 
+                top:100%; 
+                left:0; 
+                width:200px;
+            }
         }
         li {
             width:100%;
@@ -103,33 +121,31 @@ body {color:$font-color; font-family: $base-font-family; line-height:$base-line-
     a {
         text-decoration:none; 
         color: #545454; 
-        padding: 6px 14px; 
+        padding: 20px 20px; 
         display: block; 
         border-bottom: 1px solid transparent; 
-        @include transition(all 0.3s);
+        font-family: 'open sans', sans-serif;
+        font-weight: bold;
+        @include transition(all 0.2s linear);
+        @include breakpoint(large) {
+            padding: 20px 24px;
+        }
     }
-} 
+}
 
+// Main
 .site-main {
 	@extend %clearfix;
 }
+
+// Footer
 .site-footer {
 	@extend %clearfix;
 }
 
-/* Type */
-@import "partials/type.scss";
-
-/* Forms */
-// Input placeholder styling
-::-webkit-input-placeholder {color:#999999!important;}
-:-moz-placeholder {color:#999999!important;}
-:-ms-placeholder {color:#999999!important;}
-:placeholder {color:#999999!important;}
-.placeholder {color:#999999!important;}
-
-// Import partials after the main CSS 
+@import "partials/widgets.scss";
+@import "partials/forms-buttons.scss";
+@import "partials/plugins.scss";
 @import "partials/helpers.scss";
-@import "partials/media_queries.scss";
+@import "partials/grid.scss";
 @import "partials/print.scss";
-

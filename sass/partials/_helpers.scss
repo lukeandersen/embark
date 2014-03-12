@@ -1,4 +1,4 @@
-/* HELPERS */
+// Helpers
 .visually-hidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
 .visually-hidden.focusable:active, .visually-hidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
 .text-offscreen {text-indent: 100%; white-space: nowrap; overflow: hidden; }
@@ -12,26 +12,22 @@
 .clear-left {clear: left;}
 .clear-right {clear: right;}
 .align-right { text-align: right;}
+.align-center { text-align: center;}
 .img-left {float: left;margin: 0 15px 15px 0;}
 .img-right {float: right;margin: 0 0 15px 15px;}
 .last { margin-right:0 !important;}
-.flat-list { margin:0; padding:0;
-	li { float:left; list-style: none;}
-}
-.border-box {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+
 .no-marg {margin: 0;}
 .no-marg-btm {margin-bottom: 0;}
 
-/* Grid % */
-.one-half, .one-third, .two-third, .one-fourth, .three-fourth, .full-width {float: left; margin-right: 3%;}
-.one-half.last, .one-third.last, .two-third.last, .one-fourth.last, .three-fourth.last {margin-right: 0;}
-.one-half {width: 48.5%;}
-.one-third {width: 31%;}
-.two-third {width: 65%;}
-.one-fourth {width: 22.5%;}
-.three-fourth {width: 73.5%;}
+.panel {
+	@extend %clearfix;
+    margin-bottom: 1.25rem;
+    padding: 1.25rem;
+    background: $lt-gray;
+}
 
-/* Core WP Styles */
+// Core WP Styles
 a img.aligncenter{display:block;margin-left:auto;margin-right:auto;}
 .wp-caption{background:#fff;border:1px solid #f0f0f0;max-width:96%;text-align:center;padding:5px 3px 10px;}
 .wp-caption.alignright{margin:5px 0 20px 20px;}
@@ -41,4 +37,3 @@ a img.aligncenter{display:block;margin-left:auto;margin-right:auto;}
 .aligncenter,div.aligncenter,.aligncenter{display:block;margin:5px auto;}
 .alignright,a img.alignright{float:right;margin:5px 0 20px 20px;}
 .alignleft,a img.alignleft{float:left;margin:5px 20px 20px 0;}
-

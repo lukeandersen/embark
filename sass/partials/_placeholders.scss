@@ -1,6 +1,4 @@
-//-----------------------------------
-// placeholders
-//-----------------------------------
+// Placeholders
 
 %flat-list { margin:0; padding:0;list-style: none;}
 %text-offscreen {text-indent: 100%; white-space: nowrap; overflow: hidden; }
@@ -14,4 +12,25 @@
 	&:after {
 	  clear: both;
 	}
+}
+
+%clear-list { margin:0; padding:0;
+    li {list-style: none;}
+}
+
+%flat-list { margin:0; padding:0;
+    li {float: left; list-style: none;}
+}
+
+%transition {
+    @include transition(all 0.2s);
+    &:hover, &:focus{
+        @include transition(all 0.3s);
+    }
+}
+
+%opacity {
+    zoom: 1;
+    filter: alpha(opacity=80);
+    opacity: 0.8;
 }
